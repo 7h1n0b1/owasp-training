@@ -1,64 +1,94 @@
-# OWASP Top 10 Training Portal
+# 🚀 OWASP Top 10 Training Portal
 
-This is a simple interactive web application that helps you learn about the OWASP Top 10 web application security risks. The portal includes detailed information, code examples, interactive challenges, and mitigation strategies for each vulnerability.
+The **OWASP Top 10 Training Portal** is an educational web application designed to help users learn about the OWASP Top 10 web application security risks. It provides interactive challenges and detailed explanations for each vulnerability.
 
-## Features
+## 🔥 Features
 
-- Detailed explanations of each OWASP Top 10 vulnerability
-- Vulnerable code examples showing common mistakes
-- Interactive challenges to test your understanding
-- Solution hints to guide you in the right direction
-- Mitigation code examples to show proper implementation
-- Common mitigation strategies for each vulnerability
-- User registration with hashed password storage
-- Login system with password protection
-- Password recovery functionality via security questions
-- User data stored in localStorage and server file (when using server mode)
+- 📖 **Detailed explanations** of all **OWASP Top 10 (2021)** security vulnerabilities
+- 🎯 **Interactive challenges** to test understanding of each vulnerability
+- ⚠️ **Vulnerable code examples** demonstrating security mistakes
+- ✅ **Secure code examples** showcasing proper mitigation techniques
+- 🔑 **User registration and authentication** system
+- 🔄 **Password recovery** functionality
+- 📊 **Progress tracking** and statistics dashboard
+- 🛠️ **Admin panel** for user management
 
-## Setup
+## 🏗️ Technical Details
 
-### Client-only mode
-1. Open the `index.html` file in your web browser
-2. Register an account or use the default credentials (admin/password123)
+- 🎨 **Frontend:** HTML, CSS, JavaScript
+- ⚙️ **Backend:** Node.js with Express
+- 🗂️ **Storage:** Simple file-based storage for user data and statistics
+- 🌍 **Deployment:** Can run in client-only mode or with a server for persistent storage
+- 🐳 **Docker Support:** Dockerized deployment option available
 
-### With server (for persistent user storage)
-1. Install Node.js and npm
-2. Install dependencies:
+## 🔐 OWASP Top 10 (2021) Covered
+
+1. 🔓 **Broken Access Control**
+2. 🔑 **Cryptographic Failures**
+3. 💉 **Injection**
+4. 🎭 **Insecure Design**
+5. ⚙️ **Security Misconfiguration**
+6. 🧩 **Vulnerable and Outdated Components**
+7. 🆔 **Identification and Authentication Failures**
+8. 🔄 **Software and Data Integrity Failures**
+9. 📜 **Security Logging and Monitoring Failures**
+10. 🌐 **Server-Side Request Forgery (SSRF)**
+
+## 🛠️ Installation
+
+### 📌 Prerequisites
+
+- 🟢 Node.js (latest LTS recommended)
+- 🐳 Docker (optional for containerized deployment)
+
+### 📥 Steps
+
+1. 📂 Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/owasp-top10-training-portal.git
+   cd owasp-top10-training-portal
    ```
-   npm install express body-parser
+2. 📦 Install dependencies:
+   ```sh
+   npm install
    ```
-3. Start the server:
+3. ▶️ Run the application:
+   ```sh
+   npm start
    ```
-   node server/server.js
-   ```
-4. Access the application at http://localhost:3000
 
-## Usage
-1. Log in to access the OWASP Top 10 vulnerabilities
-2. Click on any vulnerability to expand its content
-3. Read the description and explore the vulnerable code
-4. Try to solve the challenge for each vulnerability
-5. Use the hint if you get stuck
-6. Submit your answer to see if it's correct
-7. When you get the correct answer, you'll see the proper mitigation code
+### 🐳 Docker Deployment
 
-## OWASP Top 10 (2021)
+To run using Docker:
 
-1. Broken Access Control
-2. Cryptographic Failures
-3. Injection
-4. Insecure Design
-5. Security Misconfiguration
-6. Vulnerable and Outdated Components
-7. Identification and Authentication Failures
-8. Software and Data Integrity Failures
-9. Security Logging and Monitoring Failures
-10. Server-Side Request Forgery (SSRF)
+```sh
+docker build -t owasp-training .
+docker run -p 3000:3000 owasp-training
+Or
+docker-compose up -d
+```
 
-## Educational Purpose
+## 📌 Usage
 
-This training portal is designed for educational purposes only. The vulnerable code examples should never be used in production environments. Always follow security best practices in your applications.
+- 🌐 Open `http://localhost:3000` in your browser.
+- 🔑 Register an account and start exploring the OWASP Top 10 vulnerabilities.
+- 🎯 Use the interactive challenges to test your understanding.
 
-## License
+## 🤝 Contributing
 
-This project is available for anyone to use and modify for educational purposes.
+Contributions are welcome! If you'd like to improve the project, feel free to submit an issue or pull request.
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## ⚠️ Disclaimer
+
+This application is designed purely for **educational purposes** to help developers understand web security vulnerabilities and learn proper implementation techniques. Do **not** deploy this application in a production environment.
+
+---
+
+### 📢 Stay Updated
+
+Follow [OWASP](https://owasp.org) for the latest security trends and best practices. 🚀
+
