@@ -1,0 +1,10 @@
+version: '3'
+services:
+  owasp-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app/server
+    environment:
+      - PORT=3000
