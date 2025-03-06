@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - OWASP Top 10 Training Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="public/styles.css">
+    <link rel="stylesheet" href="public/admin.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+    <meta name="description" content="Admin Panel for OWASP Top 10 Training Portal">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-shield-alt"></i> OWASP Training Portal - Admin Panel</h1>
+        <div class="header-actions">
+            <span id="admin-welcome-message" class="welcome-message"></span>
+            <a href="index.html" class="view-site-btn"><i class="fas fa-home"></i> View Site</a>
+            <a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </header>
+    
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <ul>
+                <li class="active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                <li data-section="users"><i class="fas fa-users"></i> User Management</li>
+                <li data-section="settings"><i class="fas fa-cog"></i> Admin Settings</li>
+            </ul>
+        </nav>
+        
+        <main class="admin-content">
+            <section id="dashboard" class="admin-section active">
+                <h2>Challenge Statistics Dashboard</h2>
+                <div class="challenge-stats-overview">
+                    <div class="stats-card total-users">
+                        <h3>Total Users</h3>
+                        <div class="stat-value" id="total-users-count">0</div>
+                    </div>
+                    <div class="stats-card total-attempts">
+                        <h3>Total Attempts</h3>
+                        <div class="stat-value" id="total-attempts-count">0</div>
+                    </div>
+                    <div class="stats-card avg-accuracy">
+                        <h3>Overall Accuracy</h3>
+                        <div class="stat-value" id="avg-accuracy-rate">0%</div>
+                    </div>
+                </div>
+                
+                <div class="challenge-stats-details">
+                    <h3>Challenge Performance Data</h3>
+                    <table id="challenge-stats-table">
+                        <thead>
+                            <tr>
+                                <th>Challenge ID</th>
+                                <th>Challenge Title</th>
+                                <th>Total Attempts</th>
+                                <th>Correct Solutions</th>
+                                <th>Accuracy Rate</th>
+                                <th>Users Completed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Challenge statistics will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="users" class="admin-section">
+                <h2>User Management</h2>
+                <div class="user-management-controls">
+                    <div class="search-container">
+                        <input type="text" id="user-search" placeholder="Search users...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button id="add-user-btn" class="action-btn">
+                        <i class="fas fa-user-plus"></i> Add New User
+                    </button>
+                </div>
+                
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Challenges Completed</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User list will be populated here -->
+                    </tbody>
+                </table>
+                
+                <div id="user-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 id="modal-title">Reset Password</h3>
+                        <form id="reset-password-form">
+                            <input type="hidden" id="reset-username">
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" required>
+                            </div>
+                            <div id="password-error" class="error"></div>
+                            <button type="submit" class="action-btn">Reset Password</button>
+                        </form>
+                        <form id="add-user-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="new-username">Username</label>
+                                <input type="text" id="new-username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-fullname">Full Name</label>
+                                <input type="text" id="new-fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-email">Email</label>
+                                <input type="email" id="new-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-user-password">Password</label>
+                                <input type="password" id="new-user-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-confirm-password">Confirm Password</label>
+                                <input type="password" id="new-confirm-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-security-question">Security Question</label>
+                                <select id="new-security-question" required>
+                                    <option value="">Select a security question</option>
+                                    <option value="What was your first pet's name?">What was your first pet's name?</option>
+                                    <option value="What city were you born in?">What city were you born in?</option>
+                                    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                                    <option value="What high school did you attend?">What high school did you attend?</option>
+                                    <option value="What was the model of your first car?">What was the model of your first car?</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-security-answer">Security Answer</label>
+                                <input type="text" id="new-security-answer" required>
+                            </div>
+                            <div id="add-user-error" class="error"></div>
+                            <button type="submit" class="action-btn">Add User</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="settings" class="admin-section">
+                <h2>Admin Settings</h2>
+                <div class="settings-card">
+                    <h3>Change Admin Password</h3>
+                    <form id="admin-password-form">
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="admin-new-password">New Password</label>
+                            <input type="password" id="admin-new-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="admin-confirm-password">Confirm Password</label>
+                            <input type="password" id="admin-confirm-password" required>
+                        </div>
+                        <div id="admin-password-error" class="error"></div>
+                        <button type="submit" class="action-btn">Update Password</button>
+                    </form>
+                </div>
+                
+                <div class="settings-card">
+                    <h3>System Maintenance</h3>
+                    <div class="maintenance-actions">
+                        <button id="clear-all-stats" class="action-btn action-btn-danger">
+                            <i class="fas fa-trash"></i> Clear All Statistics
+                        </button>
+                        <button id="export-data" class="action-btn">
+                            <i class="fas fa-download"></i> Export All Data
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p><i class="fas fa-code"></i> Educational security training portal</p>
+        <p>&copy; 2025 OWASP Top 10 Training Portal</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/challenge-tracker.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* Registration page specific styles */
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.terms-checkbox input {
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.terms-checkbox label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.terms-checkbox a {
+    color: var(--secondary-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.terms-checkbox a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.password-strength {
+    height: 5px;
+    margin-top: 8px;
+    border-radius: var(--border-radius);
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+.password-strength-meter {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength-text {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form .form-group:nth-child(5) {
+    margin-bottom: 0.5rem;
+}
+
+.password-tips {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.password-tips ul {
+    margin: 0.5rem 0 0 1.2rem;
+    padding: 0;
+}
+
+.password-tips li {
+    margin-bottom: 0.3rem;
+}
+
+.password-tips li.valid {
+    color: var(--success-color);
+}
+
+.password-tips li.invalid {
+    color: var(--accent-dark);
+}
+
+/* Animation for form elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+.form-group:nth-child(6) { animation-delay: 0.6s; }
+.form-group:nth-child(7) { animation-delay: 0.7s; }
+.form-group:nth-child(8) { animation-delay: 0.8s; }
+
+/* Styles for security question select */
+select#security-question {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+select#security-question:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Style for the small help text */
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.login-btn {
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+}
