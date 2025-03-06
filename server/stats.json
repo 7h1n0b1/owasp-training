@@ -1,0 +1,45 @@
+{
+  "mayanks": {
+    "challenges": {
+      "a01": {
+        "attempts": 2,
+        "correct": 2,
+        "solved": true,
+        "lastAttempt": "2025-03-02T14:21:45.343Z"
+      },
+      "a02": {
+        "attempts": 2,
+        "correct": 2,
+        "solved": true,
+        "lastAttempt": "2025-03-02T14:30:43.836Z"
+      },
+      "a03": {
+        "attempts": 1,
+        "correct": 1,
+        "solved": true,
+        "lastAttempt": "2025-03-02T14:36:00.797Z"
+      },
+      "a04": {
+        "attempts": 1,
+        "correct": 1,
+        "solved": true,
+        "lastAttempt": "2025-03-02T14:45:53.860Z"
+      },
+      "a05": {
+        "attempts": 5,
+        "correct": 2,
+        "solved": true,
+        "lastAttempt": "2025-03-02T14:57:58.737Z"
+      },
+      "a06": {
+        "attempts": 1,
+        "correct": 1,
+        "solved": true,
+        "lastAttempt": "2025-03-02T15:22:25.973Z"
+      }
+    },
+    "totalAttempts": 12,
+    "totalCorrect": 9,
+    "accuracyPercentage": 75
+  }
+}
